@@ -1,0 +1,12 @@
+.card__button-heart {
+    margin: 0;
+    padding: 0;
+    min-width: 20.76px;
+    min-height: 18.13px;
+    color: #000000;
+    background-image: url('../../../images/card-button-heart.png');
+    background-position: center;
+    background-size: cover;
+    background-color: #FFFFFF;
+    border: 1px red solid;
+}

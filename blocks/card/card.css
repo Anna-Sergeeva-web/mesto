@@ -1,0 +1,24 @@
+@import "./__image/card__image.css";
+@import "./__description/card__description.css";
+@import "./__caption/card__caption.css";
+@import "./__button-heart/card__button-heart.css";
+
+
+.card {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 361px;
+    object-fit: cover;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid red;
+
+}
