@@ -1,0 +1,9 @@
+.header {
+    margin: 45px 200px 40px 200px;
+    padding: 0;
+    max-width: 880px;
+    min-height: 74px;
+    color: #FFFFFF;
+    display: flex;
+    border-bottom: 1px #545454 solid;
+}

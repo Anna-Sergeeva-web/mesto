@@ -1,0 +1,45 @@
+@font-face {
+    src: 
+    url('../Inter-3.15/Inter/Inter-Regular.otf') format('otf'),
+    url('../Inter-3.15/Inter/Inter-Regular.ttf') format('ttf'),
+    url('../Inter-3.15/Inter/Inter-Regular.woff') format('woff'),
+    url('../Inter-3.15/Inter/Inter-Regular.woff2') format('woff2');
+    font-family: 'Inter';
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%; 
+  }
+
+  
+  @font-face {
+    src: 
+    url('../Inter-3.15/Inter/Inter-Black.woff') format('woff'),
+    url('../Inter-3.15/Inter/Inter-Black.woff2') format('woff2'),
+    url('../Inter-3.15/Inter/Inter-Black.otf') format('otf'),
+    url('../Inter-3.15/Inter/Inter-Black.ttf') format('ttf');
+    font-family: 'Inter';
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%; 
+  }
+
+  @font-face {
+    src: 
+    url('../Inter-3.15/Inter/Inter-Bold.otf') format('otf'),
+    url('../Inter-3.15/Inter/Inter-Bold.ttf') format('ttf'),
+    url('../Inter-3.15/Inter/Inter-Bold.woff') format('woff'),
+    url('../Inter-3.15/Inter/Inter-Bold.woff2') format('woff2');
+    font-family: 'Inter';
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%; 
+  }
