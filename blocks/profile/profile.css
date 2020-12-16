@@ -1,0 +1,19 @@
+@import "./__avatar/profile__avatar.css";
+@import "./__info/profile__info.css";
+@import "./__name/profile__name.css";
+@import "./__occupation/profile__occupation.css";
+@import "./__button/profile__button.css";
+@import "./__button/_type/profile__button_type_edit.css";
+@import "./__button/_type/profile__button_type_add.css";
+
+
+
+.profile {
+    margin: 0 200px 45px 200px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 880px;
+    border: 1px red solid;
+}

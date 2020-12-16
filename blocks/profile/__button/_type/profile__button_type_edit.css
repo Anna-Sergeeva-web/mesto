@@ -1,0 +1,9 @@
+.profile__button_type_edit {
+    background-image: url('../../../../images/profile-button-edit.svg');
+    background-size: cover;
+    background-position: center;
+    min-width: 24px;
+    min-height: 24px;
+    width: 100%;
+    border: 1px red solid;
+}

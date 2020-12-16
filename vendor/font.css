@@ -16,12 +16,12 @@
   
   @font-face {
     src: 
-    url('../Inter-3.15/Inter/Inter-Black.woff') format('woff'),
-    url('../Inter-3.15/Inter/Inter-Black.woff2') format('woff2'),
-    url('../Inter-3.15/Inter/Inter-Black.otf') format('otf'),
-    url('../Inter-3.15/Inter/Inter-Black.ttf') format('ttf');
+    url('../Inter-3.15/Inter/Inter-Medium.woff') format('woff'),
+    url('../Inter-3.15/Inter/Inter-Medium.woff2') format('woff2'),
+    url('../Inter-3.15/Inter/Inter-Medium.otf') format('otf'),
+    url('../Inter-3.15/Inter/Inter-Medium.ttf') format('ttf');
     font-family: 'Inter';
-    font-weight: 900;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
@@ -29,17 +29,4 @@
     -moz-text-size-adjust: 100%; 
   }
 
-  @font-face {
-    src: 
-    url('../Inter-3.15/Inter/Inter-Bold.otf') format('otf'),
-    url('../Inter-3.15/Inter/Inter-Bold.ttf') format('ttf'),
-    url('../Inter-3.15/Inter/Inter-Bold.woff') format('woff'),
-    url('../Inter-3.15/Inter/Inter-Bold.woff2') format('woff2');
-    font-family: 'Inter';
-    font-weight: 700;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%; 
-  }
+ 
