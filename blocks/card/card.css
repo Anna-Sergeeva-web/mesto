@@ -20,5 +20,6 @@
     overflow: hidden;
     position: relative;
     border: 1px solid red;
+    max-width: 282px;
 
 }

@@ -8,5 +8,21 @@
     background-size: cover;
     background-position: center;
     border: 1px #FFFFFF solid;
-
 }
+
+@media screen and (max-width: 650px) {  
+    .profile__button_type_add { 
+       margin: 0;
+       min-width: 90px;
+       min-height: 30px;
+     }
+ } 
+
+@media screen and (max-width: 425px) {  
+    .profile__button_type_add { 
+       font-size: 27px;
+       line-height: auto;
+       min-width: 282px;
+       min-height: 50px;
+     }
+ } 

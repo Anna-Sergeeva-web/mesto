@@ -6,4 +6,12 @@
     font-weight: normal;
     font-size: 18px;
     line-height: auto;
+    max-width: 318px;
+    border: 1px red solid;
 }
+
+@media screen and (max-width: 320px) {  
+    .footer__copyright { 
+       font-size: 14px;
+     }
+ } 

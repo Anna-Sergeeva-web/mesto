@@ -1,7 +1,7 @@
 .header {
     margin: 45px 200px 40px 200px;
     padding: 0;
-    max-width: 880px;
+    min-width: 880px;
     min-height: 74px;
     color: #FFFFFF;
     display: flex;
@@ -9,3 +9,30 @@
     opacity: 0.7;
     border: 1px solid red;
 }
+
+@media screen and (min-width: 1440px) {  
+    .header { 
+       margin: 45px 0 40px 0;
+     }
+ } 
+
+ @media screen and (max-width: 1024px) {  
+    .header { 
+       margin: 45px calc((1024px - 880px)/2) 40px calc((1024px - 880px)/2);
+       max-width: 880px;
+     }
+ } 
+
+ @media screen and (max-width: 800px) {  
+    .header { 
+      margin: 45px 2% 40px 2%;
+      min-width: calc(100% - 4%);
+     }
+ } 
+
+@media screen and (max-width: 425px) {  
+    .header { 
+       margin: 28px 0 42px 0;
+       min-width: 100%;
+     }
+ } 

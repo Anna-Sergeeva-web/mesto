@@ -4,6 +4,32 @@
 .footer {
     margin: 0 200px 60px 200px;
     padding: 0;
-    max-width: 318px;
+    min-width: 880px;
     border: 1px red solid;
 }
+
+@media screen and (min-width: 1440px) {  
+    .footer { 
+       margin: 0 0 60px 0;
+     }
+ } 
+
+ @media screen and (min-width: 1024px) {  
+    .footer { 
+       margin: 0 calc((1024px - 880px)/2) 60px calc((1024px - 880px)/2);
+     }
+ } 
+
+ @media screen and (max-width: 800px) {  
+    .footer { 
+        margin: 0 2% 60px 2%;
+        min-width: calc(100% - 4%);
+     }
+ } 
+
+ @media screen and (max-width: 425px) {  
+    .footer { 
+        margin: 0 calc((100% - 282px)/2) 36px calc((100% - 282px)/2);
+        min-width: 282px;
+     }
+ } 
