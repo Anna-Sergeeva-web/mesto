@@ -5,7 +5,6 @@
     margin: 0 200px 60px 200px;
     padding: 0;
     min-width: 880px;
-    border: 1px red solid;
 }
 
 @media screen and (min-width: 1440px) {  

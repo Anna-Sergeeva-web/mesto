@@ -3,7 +3,6 @@
     padding: 0;
     min-width: 120px;
     min-height: 120px;
-    border: 1px red solid;
 }
 
 @media screen and (max-width: 650px) {  

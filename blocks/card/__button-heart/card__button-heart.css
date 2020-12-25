@@ -4,9 +4,18 @@
     min-width: 20.76px;
     min-height: 18.13px;
     color: #000000;
-    background-image: url('../../../images/card-button-heart.png');
+    background-image: url('../../../images/card-button-heart.svg');
     background-position: center;
     background-size: cover;
     background-color: #FFFFFF;
-    border: 1px red solid;
+    transition: background-color 0.5s linear;
 }
+
+.card__button-heart:hover {
+   cursor: pointer;
+   opacity: 0.5;
+}
+
+.card__button-heart:active {
+    background-image: url('../../../images/card-button-heart-active.png');
+ }

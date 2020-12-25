@@ -1,0 +1,43 @@
+.popup-input__text {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+input[type='text']{
+   border: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #000000;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: auto;
+ }
+ :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #000000;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: auto;
+ }
+
+ ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000000;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: auto;
+ }
+
+ :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #000000;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: auto;
+ }
+
+

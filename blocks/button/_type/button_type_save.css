@@ -1,0 +1,26 @@
+.button_type_save {
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-height: 50px;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.button_type_save:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 425px) {  
+    .button_type_save { 
+        font-size: 14px;
+     }
+ } 
+

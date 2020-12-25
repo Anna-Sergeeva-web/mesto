@@ -7,7 +7,6 @@
     display: flex;
     border-bottom: 1px #545454 solid;
     opacity: 0.7;
-    border: 1px solid red;
 }
 
 @media screen and (min-width: 1440px) {  
@@ -34,5 +33,6 @@
     .header { 
        margin: 28px 0 42px 0;
        min-width: 100%;
+       min-height: 56px;
      }
  } 

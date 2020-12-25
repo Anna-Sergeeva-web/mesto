@@ -2,10 +2,6 @@
 @import "./__info/profile__info.css";
 @import "./__name/profile__name.css";
 @import "./__occupation/profile__occupation.css";
-@import "./__button/profile__button.css";
-@import "./__button/_type/profile__button_type_edit.css";
-@import "./__button/_type/profile__button_type_add.css";
-
 
 
 .profile {
@@ -15,7 +11,6 @@
     justify-content: flex-start;
     align-items: center;
     min-width: 880px;
-    border: 1px red solid;
 }
 
 @media screen and (max-width: 1024px) {  
@@ -45,5 +40,6 @@
     .profile { 
        margin: 0 calc((100% - 282px)/2) 36px calc((100% - 282px)/2);
        min-width: 282px;
+       max-height: 286px;
      }
  } 

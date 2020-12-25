@@ -3,9 +3,17 @@
 @import "../blocks/page-style/page-style.css";
 @import "../blocks/header/header.css";
 @import "../blocks/logo/logo.css";
-@import "../blocks/page/page.css";
+@import "../blocks/container/container.css";
 @import "../blocks/profile/profile.css";
+@import "../blocks/button/button.css";
+@import "../blocks/button/_type/button_type_add.css";
+@import "../blocks/button/_type/button_type_edit.css";
 @import "../blocks/photo-grid/photo-grid.css";
 @import "../blocks/card/card.css";
 @import "../blocks/footer/footer.css";
+@import "../blocks/overlay/overlay.css";
+@import "../blocks/overlay/_type/overlay_type_opened.css";
+@import "../blocks/popup-input/popup-input.css";
+@import "../blocks/button/_type/button_type_close.css";
+@import "../blocks/button/_type/button_type_save.css";
 

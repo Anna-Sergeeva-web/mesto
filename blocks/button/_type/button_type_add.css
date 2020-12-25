@@ -1,17 +1,18 @@
-.profile__button_type_add {
+.button_type_add {
     margin-left: auto;
     padding: 0;
     min-width: 150px;
     min-height: 50px;
-    background-image: url('../../../../images/profile-button-add.png');
-    background-color: #000000;
-    background-size: cover;
-    background-position: center;
+    background-image: url('../../../images/button-add.png');
     border: 1px #FFFFFF solid;
 }
 
+.button_type_add:hover {
+    opacity: 0.6;
+}
+
 @media screen and (max-width: 650px) {  
-    .profile__button_type_add { 
+    .button_type_add { 
        margin: 0;
        min-width: 90px;
        min-height: 30px;
@@ -19,7 +20,7 @@
  } 
 
 @media screen and (max-width: 425px) {  
-    .profile__button_type_add { 
+    .button_type_add { 
        font-size: 27px;
        line-height: auto;
        min-width: 282px;
