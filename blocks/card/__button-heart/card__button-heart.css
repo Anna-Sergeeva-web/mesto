@@ -9,6 +9,7 @@
     background-size: cover;
     background-color: #FFFFFF;
     transition: background-color 0.5s linear;
+    border: none;
 }
 
 .card__button-heart:hover {
