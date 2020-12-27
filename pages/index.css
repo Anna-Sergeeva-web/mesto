@@ -18,13 +18,12 @@
 @import "../blocks/card/__image/card__image.css";
 @import "../blocks/card/__description/card__description.css";
 @import "../blocks/card/__caption/card__caption.css";
-@import "../blocks/card/__button-heart/card__button-heart.css";
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
 @import "../blocks/overlay/overlay.css";
+@import "../blocks/overlay/__heading/overlay__heading.css";
 @import "../blocks/overlay/_type/overlay_type_opened.css";
 @import "../blocks/popup-input/popup-input.css";
-@import "../blocks/popup-input/__heading/popup-input__heading.css";
 @import "../blocks/popup-input/__text/popup-input__text.css";
 @import "../blocks/button/_type/button_type_close.css";
 @import "../blocks/button/_type/button_type_save.css";
