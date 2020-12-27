@@ -17,52 +17,52 @@
             <img class="profile__avatar" alt="Аватар" src="images/profile-avatar.png">
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button class="button button_type_edit" onclick="openForm()"></button>
+                <button class="button button_type_edit" type="button"></button>
                 <p class="profile__occupation">Исследователь океана</p>
             </div>
-            <button class="button button_type_add"></button>
+            <button class="button button_type_add" type="button"></button>
         </section>
         <section class="photo-grid">
             <div class="card">
                 <img class="card__image" alt="Карачаевск" src="images/photo-grid-Karachaevsk.png">
                 <div class="card__description">
-                    <p class="card__caption">Карачаевск</p>
-                    <button class="card__button-heart"></button>
+                    <h2 class="card__caption">Карачаевск</h2>
+                    <button class="button_type_heart" type="button"></button>
                 </div>
             </div>
             <div class="card">
                 <img class="card__image" alt="Гора Эльбрус" src="images/photo-grid-Elbrus.png">
                 <div class="card__description">
-                    <p class="card__caption">Гора Эльбрус</p>
-                    <button class="card__button-heart"></button>
+                    <h2 class="card__caption">Гора Эльбрус</h2>
+                    <button class="button_type_heart" type="button"></button>
                 </div>
             </div>
             <div class="card">
                 <img class="card__image" alt="Домбай" src="images/photo-grid-Dombai.png">
                 <div class="card__description">
-                    <p class="card__caption">Домбай</p>
-                    <button class="card__button-heart"></button>
+                    <h2 class="card__caption">Домбай</h2>
+                    <button class="button_type_heart" type="button"></button>
                 </div>
             </div>
             <div class="card">
                 <img class="card__image" alt="Гора Эльбрус" src="images/photo-grid-Elbrus.png">
                 <div class="card__description">
-                    <p class="card__caption">Гора Эльбрус</p>
-                    <button class="card__button-heart"></button>
+                    <h2 class="card__caption">Гора Эльбрус</h2>
+                    <button class="button_type_heart" type="button"></button>
                 </div>
             </div>
             <div class="card">
                 <img class="card__image" alt="Домбай" src="images/photo-grid-Dombai.png">
                 <div class="card__description">
-                    <p class="card__caption">Домбай</p>
-                    <button class="card__button-heart"></button>
+                    <h2 class="card__caption">Домбай</h2>
+                    <button class="button_type_heart" type="button"></button>
                 </div>
             </div>
             <div class="card">
                 <img class="card__image" alt="Карачаево-Черкессия" src="images/photo-grid-Karachaevsk.png">
                 <div class="card__description">
-                    <p class="card__caption">Карачаево-Черкессия</p>
-                    <button class="card__button-heart"></button>
+                    <h2 class="card__caption">Карачаево-Черкессия</h2>
+                    <button class="button_type_heart" type="button"></button>
                 </div>
             </div>
         </section>
@@ -71,20 +71,15 @@
         <p class="footer__copyright">&copy;2020 Mesto Russia</p>
     </footer>
     <section class="overlay">
-        <form class="popup-input">
-            <h2 class="popup-input__heading">Редактировать профиль</h2>
-            <div class="popup-input__name">
-                <input type="text" placeholder="Жак-Ив Кусто" class="popup-input__text popup-input__text-name">
-            </div>
-             <div class="popup-input__occupation">
-                <input type="text" placeholder="Исследователь океана" class="popup-input__text popup-input__text-occupation">
-            </div>
-            <button class="button button_type_save" type="submit" onclick="handleFormSubmit(evt)">Сохранить</button>
-            <button class="button button_type_close" onclick="closeForm()"></button>
+        <h2 class="popup-input__heading">Редактировать профиль</h2>
+        <form class="popup-input" name="popup-input">
+            <input type="text" placeholder="Жак-Ив Кусто" name= "" class="popup-input__text popup-input__text_type_name">
+            <input type="text" placeholder="Исследователь океана" class="popup-input__text popup-input__text_type_occupation">
+            <button class="button button_type_save" type="submit">Сохранить</button>
+            <button class="button button_type_close" type="button"></button>
         </form>
     </section>
     <script src="./scripts/index.js"></script>
-    <script src="./scripts/index1.js"></script>
 </body>
 
 </html>

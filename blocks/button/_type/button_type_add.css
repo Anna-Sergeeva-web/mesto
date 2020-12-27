@@ -5,6 +5,7 @@
     min-height: 50px;
     background-image: url('../../../images/button-add.png');
     border: 1px #FFFFFF solid;
+    border-radius: 2px;
 }
 
 .button_type_add:hover {
@@ -21,8 +22,7 @@
 
 @media screen and (max-width: 425px) {  
     .button_type_add { 
-       font-size: 27px;
-       line-height: auto;
+       background-image: url('../../../images/button-add-mobile.png');
        min-width: 282px;
        min-height: 50px;
      }

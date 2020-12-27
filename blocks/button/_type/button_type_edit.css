@@ -1,9 +1,10 @@
 .button_type_edit {
-    background-image: url('../../../images/button-edit.svg');
+    background-image: url('../../../images/button-edit.png');
     color: #FFFFFF;
     min-width: 24px;
     min-height: 24px;
     width: 100%;
+    border: 1px #FFFFFF solid;
 }
 
 .button_type_edit:hover {

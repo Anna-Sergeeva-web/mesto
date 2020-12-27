@@ -1,4 +1,4 @@
-.card__button-heart {
+.button_type_heart {
     margin: 0;
     padding: 0;
     min-width: 20.76px;
@@ -12,11 +12,11 @@
     border: none;
 }
 
-.card__button-heart:hover {
+.button_type_heart:hover {
    cursor: pointer;
    opacity: 0.5;
 }
 
-.card__button-heart:active {
+.button_type_heart:active {
     background-image: url('../../../images/card-button-heart-active.png');
  }
