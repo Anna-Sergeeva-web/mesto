@@ -11,8 +11,8 @@ let profileOccupation = profileElement.querySelector('.profile__occupation');
 
 let openForm = () => {
    overlay.classList.add('overlay_type_opened');
-   profileName.value = nameInput.textContent
-   profileOccupation.value = jobInput.textContent
+   nameInput.value = profileName.textContent
+   jobInput.value = profileOccupation.textContent
   }
 
 let closeForm = () => {
@@ -25,12 +25,10 @@ let handleFormSubmit = (evt) => {
    profileName.textContent = nameInput.value
    profileOccupation.textContent = jobInput.value
 
-   let closeForm = () => {
-      overlay.classList.remove('overlay_type_opened');
-     }
-   formElement.addEventListener('submit', closeForm);  
+   closeForm();
 }
 
 editButton.addEventListener('click', openForm);
 closeButton.addEventListener('click', closeForm);
 formElement.addEventListener('submit', handleFormSubmit);
+formElement.addEventListener('submit', closeForm);

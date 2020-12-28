@@ -1,5 +1,5 @@
 .popup-input {
-    margin: 195px 0 0 0;
+    margin: 0;
     padding: 34px 36px 37px 36px;
     display: flex;
     min-width: calc(430px - 36px*2);
@@ -10,11 +10,11 @@
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
     position: relative;
+    min-height: calc(330px - 34px - 37px);
 }
 
  @media screen and (max-width: 480px) {  
-    .popup-input { 
-       margin: 123px calc((100% - 282px)/2) 0 calc((100% - 282px)/2);
+    .popup-input {
        padding: 25px 22px 25px 22px;
        min-width: 282px;
        box-sizing: border-box;

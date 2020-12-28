@@ -15,6 +15,7 @@
 @import "../blocks/photo-grid/photo-grid.css";
 @import "../blocks/card/card.css";
 @import "../blocks/button/_type/button_type_heart.css";
+@import "../blocks/button/_type/button_type_heart_put.css";
 @import "../blocks/card/__image/card__image.css";
 @import "../blocks/card/__description/card__description.css";
 @import "../blocks/card/__caption/card__caption.css";
