@@ -12,6 +12,8 @@
     .popup-input_type_photo  { 
         min-width: 240px;
         min-height: 299px;
+        max-width: 75vh;
+        max-height: 75vw;
      }
  } 
  

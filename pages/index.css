@@ -25,6 +25,7 @@
 @import "../blocks/overlay/overlay.css";
 @import "../blocks/overlay/__heading/overlay__heading.css";
 @import "../blocks/overlay/_type/overlay_type_opened.css";
+@import "../blocks/overlay/_type/overlay_type_photo.css";
 @import "../blocks/popup-input/popup-input.css";
 @import "../blocks/popup-input/__text/popup-input__text.css";
 @import "../blocks/popup-input/__text/_type/popup-input__text_type_edit.css";
