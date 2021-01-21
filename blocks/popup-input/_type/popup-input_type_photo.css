@@ -1,0 +1,17 @@
+.popup-input_type_photo {
+    padding: 0;
+    min-width: 433px;
+    min-height: 540px;
+    max-width: 75vw;
+    max-height: 75vh;
+    width: auto;
+    position: fixed;
+}
+
+@media screen and (max-width: 425px) {  
+    .popup-input_type_photo  { 
+        min-width: 240px;
+        min-height: 299px;
+     }
+ } 
+ 

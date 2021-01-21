@@ -15,8 +15,9 @@
 @import "../blocks/photo-grid/photo-grid.css";
 @import "../blocks/card/card.css";
 @import "../blocks/button/_type/button_type_heart.css";
-@import "../blocks/button/_type/button_type_heart_put.css";
+@import "../blocks/button/_type/button_type_heart_active.css";
 @import "../blocks/card/__image/card__image.css";
+@import "../blocks/button/_type/button_type_delete.css";
 @import "../blocks/card/__description/card__description.css";
 @import "../blocks/card/__caption/card__caption.css";
 @import "../blocks/footer/footer.css";
@@ -26,5 +27,12 @@
 @import "../blocks/overlay/_type/overlay_type_opened.css";
 @import "../blocks/popup-input/popup-input.css";
 @import "../blocks/popup-input/__text/popup-input__text.css";
+@import "../blocks/popup-input/__text/_type/popup-input__text_type_edit.css";
+@import "../blocks/popup-input/_type/popup-input_type_add.css";
+@import "../blocks/popup-input/__text/_type/popup-input__text_type_add.css";
+@import "../blocks/popup-input/_type/popup-input_type_opened.css";
+@import "../blocks/popup-input/_type/popup-input_type_photo.css";
+@import "../blocks/popup-input/__image/popup-input__image.css";
+@import "../blocks/popup-input/__caption/popup-input__caption.css";
 @import "../blocks/button/_type/button_type_close.css";
 @import "../blocks/button/_type/button_type_save.css";

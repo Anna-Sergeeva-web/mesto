@@ -16,7 +16,3 @@
    cursor: pointer;
    opacity: 0.5;
 }
-
-.button_type_heart:active {
-    background-image: url('../../../images/card-button-heart-active.png');
- }

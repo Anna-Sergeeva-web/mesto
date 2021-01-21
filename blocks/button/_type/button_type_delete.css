@@ -1,0 +1,22 @@
+.button_type_delete {
+    margin: 0;
+    padding: 0;
+    min-width: 18px;
+    min-height: 19.3px;
+    background-image: url('../../../images/card-button-delete.png');
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    z-index: 1;
+    transition: background-color 0.5s linear;
+    border: none;
+}
+
+.button_type_delete:hover {
+   cursor: pointer;
+   opacity: 0.5;
+}
+

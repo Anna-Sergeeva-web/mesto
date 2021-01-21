@@ -1,7 +1,7 @@
 .overlay {
     margin: 0;
     padding: 0;
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,5 +12,7 @@
     align-items: center;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    transition: 0.5s;
 }
 

@@ -1,0 +1,16 @@
+.popup-input__caption {
+    margin: 0;
+    padding: 0;
+    max-width: 291px;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    color: #FFFFFF;
+}

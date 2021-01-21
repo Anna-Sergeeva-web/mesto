@@ -1,0 +1,17 @@
+.popup-input__text_type_add::-webkit-input-placeholder { /* WebKit browsers */
+    color: #C4C4C4;
+ }
+
+ .popup-input__text_type_add:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #C4C4C4;
+ }
+
+ .popup-input__text_type_add::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #C4C4C4;
+ }
+
+ .popup-input__text_type_add:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #C4C4C4;
+ }
+
+
