@@ -29,8 +29,8 @@
     <footer class="footer">
         <p class="footer__copyright">&copy;2020 Mesto Russia</p>
     </footer>
-    <section class="overlay">
-        <h2 class="overlay__heading"></h2>
+    <section class="overlay overlay_type_edit">
+        <h2 class="overlay__heading">Редактировать</h2>
         <form class="popup-input popup-input_type_edit" name="popup-input">
             <input type="text" placeholder="Жак-Ив Кусто" name="name"
                 class="popup-input__text popup-input__text_type_edit popup-input__text_type_name">
@@ -39,6 +39,9 @@
             <button class="button button_type_save" type="submit">Сохранить</button>
             <button class="button button_type_close" type="button"></button>
         </form>
+    </section>
+    <section class="overlay overlay_type_add">
+        <h2 class="overlay__heading">Новое место</h2>
         <form class="popup-input popup-input_type_add" name="popup-input">
             <input type="text" placeholder="Название" name="name"
                 class="popup-input__text popup-input__text_type_add popup-input__text_type_place">
@@ -47,6 +50,8 @@
             <button class="button button_type_save" type="submit">Создать</button>
             <button class="button button_type_close" type="button"></button>
         </form>
+    </section>
+    <section class="overlay overlay_type_photo">
         <div class="popup-input popup-input_type_photo">
             <img class="popup-input__image" alt="#" src="#">
             <button class="button button_type_close" type="button"></button>

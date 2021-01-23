@@ -1,15 +1,3 @@
-const overlay = document.querySelector('.overlay');
-const editButton = document.querySelector('.button_type_edit');
-const popupEdit = overlay.querySelector('.popup-input_type_edit');
-const popupAdd = overlay.querySelector('.popup-input_type_add');
-const closeButton = popupEdit.querySelector('.button_type_close');
-const formElement = overlay.querySelector('.popup-input');
-const profileElement = document.querySelector('.profile');
-const nameInput = formElement.querySelector('.popup-input__text_type_name');
-const jobInput = formElement.querySelector('.popup-input__text_type_occupation');
-const profileName = profileElement.querySelector('.profile__name');
-const profileOccupation = profileElement.querySelector('.profile__occupation');
-const addButton = profileElement.querySelector('.button_type_add');
 const initialCards = [
   {
     name: 'Архыз',
@@ -38,15 +26,29 @@ const initialCards = [
 ];
 const itemTemplate = document.querySelector('.template-card').content;
 const photoGrid = document.querySelector('.photo-grid');
-const closeAddButton = popupAdd.querySelector('.button_type_close');
+const overlay = document.querySelector('.overlay');
+const overlayEdit = document.querySelector('.overlay_type_edit');
+const overlayAdd = document.querySelector('.overlay_type_add');
+const overlayPhoto = document.querySelector('.overlay_type_photo');
+const popupEdit = overlayEdit.querySelector('.popup-input_type_edit');
+const popupAdd = overlayAdd.querySelector('.popup-input_type_add');
+const popupPhoto = overlayPhoto.querySelector('.popup-input_type_photo');
+const profileElement = document.querySelector('.profile');
+const editButton = profileElement.querySelector('.button_type_edit');
+const addButton = profileElement.querySelector('.button_type_add');
+const closeButtonEdit = popupEdit.querySelector('.button_type_close');
+const closeButtonAdd = popupAdd.querySelector('.button_type_close');
+const closeButtonPhoto = popupPhoto.querySelector('.button_type_close');
+const popupImage = popupPhoto.querySelector('.popup-input__image');
+const popupCaption = popupPhoto.querySelector('.popup-input__caption');
+const profileName = profileElement.querySelector('.profile__name');
+const profileOccupation = profileElement.querySelector('.profile__occupation');
+const nameInput = popupEdit.querySelector('.popup-input__text_type_name');
+const jobInput = popupEdit.querySelector('.popup-input__text_type_occupation');
 const createButton = popupAdd.querySelector('.button_type_save');
 const placeInput = popupAdd.querySelector('.popup-input__text_type_place');
 const linkInput = popupAdd.querySelector('.popup-input__text_type_link');
-const deleteButton = itemTemplate.querySelector('.button_type_delete');
-const popupPhoto = overlay.querySelector('.popup-input_type_photo');
-const popupImage = popupPhoto.querySelector('.popup-input__image');
-const popupCaption = popupPhoto.querySelector('.popup-input__caption');
-const closePhotoButton = popupPhoto.querySelector('.button_type_close');
+
 
 const render = () => {
   initialCards.forEach(renderItem);
@@ -64,98 +66,59 @@ const renderItem = (item) => {
     evt.target.closest('.card').remove();
   });
   htmlElement.querySelector('.card__image').addEventListener('click', function (evt) {
-    overlay.classList.add('overlay_type_opened');
-    overlay.classList.add('overlay_type_photo');
     popupCaption.innerText = evt.target.alt;
     popupImage.alt = evt.target.alt;
     popupImage.src = evt.target.src;
-    popupPhoto.classList.add('popup-input_type_opened');
-    overlay.querySelector('.overlay__heading').innerText = "";
+    openModal(popupPhoto);
+    overlayPhoto.add('overlay_type_image');
   });
-  photoGrid.appendChild(htmlElement);
+  photoGrid.prepend(htmlElement);
 }
 
 render();
 
-
-const openEditForm = () => {
-  overlay.classList.add('overlay_type_opened');
-  popupEdit.classList.add('popup-input_type_opened');
-  overlay.querySelector('.overlay__heading').innerText = "Редактировать";
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileOccupation.textContent;
+function openModal(popup) {
+  popup.closest('.overlay').classList.add('overlay_type_opened');
+  popup.classList.add('popup-input_type_opened');
+  linkInput.value = '';
+  placeInput.value = '';
 }
 
-const closeEditForm = () => {
-  overlay.classList.remove('overlay_type_opened');
-  popupEdit.classList.remove('popup-input_type_opened');
+const closeModal = (popup) => {
+  popup.closest('.overlay').classList.remove('overlay_type_opened');
+  popup.classList.remove('popup-input_type_opened');
 }
 
 const handleFormSubmit = (evt) => {
   evt.preventDefault();
 
-  profileName.textContent = nameInput.value
-  profileOccupation.textContent = jobInput.value
+  profileName.textContent = nameInput.value;
+  profileOccupation.textContent = jobInput.value;
+  nameInput.value = '';
+  jobInput.value = '';
 
-  closeEditForm();
+  closeModal(popupEdit);
 }
 
-const openAddForm = () => {
-  overlay.classList.add('overlay_type_opened');
-  popupAdd.classList.add('popup-input_type_opened');
-  overlay.querySelector('.overlay__heading').innerText = "Новое место";
-}
-
-const closeAddForm = () => {
-  overlay.classList.remove('overlay_type_opened');
-  popupAdd.classList.remove('popup-input_type_opened');
-}
 
 const handleFormSubmitAdd = (evt) => {
   evt.preventDefault();
 
-  const addElement = itemTemplate.cloneNode(true);
-  addElement.querySelector('.card__caption').textContent = placeInput.value;
-  addElement.querySelector('.card__image').alt = placeInput.value;
-  addElement.querySelector('.card__image').src = linkInput.value;
-  addElement.querySelector('.button_type_heart').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('button_type_heart_active');
-  });
-  addElement.querySelector('.button_type_delete').addEventListener('click', function (evt) {
-    evt.target.closest('.card').remove();
-  });
-  addElement.querySelector('.card__image').addEventListener('click', function (evt) {
-    overlay.classList.add('overlay_type_opened');
-    overlay.classList.add('overlay_type_photo');
-    popupCaption.innerText = evt.target.alt;
-    popupImage.alt = evt.target.alt;
-    popupImage.src = evt.target.src;
-    popupPhoto.classList.add('popup-input_type_opened');
-    overlay.querySelector('.overlay__heading').innerText = "";
-
-  });
-
-  photoGrid.prepend(addElement);
-
-  linkInput.value = '';
-  placeInput.value = '';
-
-  closeAddForm();
+  const newCards = [
+    {name: placeInput.value,
+    link: linkInput.value,}];
+    
+    const addItem = () => {
+      newCards.forEach(renderItem);
+    }
+    addItem();
 }
 
-const closePhoto = () => {
-  overlay.classList.remove('overlay_type_opened');
-  popupPhoto.classList.remove('popup-input_type_opened');
-}
-
-
-editButton.addEventListener('click', openEditForm);
-closeButton.addEventListener('click', closeEditForm);
-formElement.addEventListener('submit', handleFormSubmit);
-formElement.addEventListener('submit', closeEditForm);
-addButton.addEventListener('click', openAddForm);
-closeAddButton.addEventListener('click', closeAddForm);
+editButton.addEventListener('click', function () { openModal(popupEdit); });
+addButton.addEventListener('click', function () { openModal(popupAdd); });
+closeButtonEdit.addEventListener('click', function () { closeModal(popupEdit); });
+closeButtonAdd.addEventListener('click', function () { closeModal(popupAdd); });
+closeButtonPhoto.addEventListener('click', function () { closeModal(popupPhoto); });
+popupEdit.addEventListener('submit', handleFormSubmit);
 createButton.addEventListener('click', handleFormSubmitAdd);
-closePhotoButton.addEventListener('click', closePhoto);
-
-
+createButton.addEventListener('click', function () { closeModal(popupAdd); });
