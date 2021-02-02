@@ -1,0 +1,15 @@
+.popup-input__error {
+    margin: 5px 0 13px 0;
+    display: flex;
+    font-family: 'Inter','Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: auto;
+    color: red;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+.popup-input__error:last-of-type {
+    margin-bottom: 31px;
+}

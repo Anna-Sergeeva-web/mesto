@@ -26,7 +26,6 @@ const initialCards = [
 ];
 const itemTemplate = document.querySelector('.template-card').content;
 const photoGrid = document.querySelector('.photo-grid');
-const overlay = document.querySelector('.overlay');
 const overlayEdit = document.querySelector('.overlay_type_edit');
 const overlayAdd = document.querySelector('.overlay_type_add');
 const overlayPhoto = document.querySelector('.overlay_type_photo');
@@ -79,19 +78,36 @@ render();
 
 function openModal(popup) {
   popup.closest('.overlay').classList.add('overlay_type_opened');
+  popup.closest('.overlay').addEventListener('click', closeOverlay);
+  document.addEventListener('keydown',closeEsc);
   popup.classList.add('popup-input_type_opened');
   linkInput.value = '';
   placeInput.value = '';
 }
 
+const closeOverlay = (evt) => {
+  const popup = document.querySelector('.popup-input_type_opened');
+  if (evt.target.classList.contains('overlay')) {
+    closeModal(popup);
+  }
+}
+
+const closeEsc = (evt) => {
+  const popup = document.querySelector('.popup-input_type_opened');
+  if (evt.keyCode === 27) {
+    closeModal(popup);
+  }
+}
+
 const closeModal = (popup) => {
   popup.closest('.overlay').classList.remove('overlay_type_opened');
   popup.classList.remove('popup-input_type_opened');
+  document.removeEventListener('keydown', closeEsc);
 }
 
 const handleFormSubmit = (evt) => {
   evt.preventDefault();
-
+  
   profileName.textContent = nameInput.value;
   profileOccupation.textContent = jobInput.value;
   nameInput.value = '';
@@ -104,15 +120,13 @@ const handleFormSubmit = (evt) => {
 const handleFormSubmitAdd = (evt) => {
   evt.preventDefault();
 
-  const newCards = [
+  const newCard = 
     {name: placeInput.value,
-    link: linkInput.value,}];
+    link: linkInput.value,};
     
-    const addItem = () => {
-      newCards.forEach(renderItem);
-    }
-    addItem();
+    renderItem(newCard);
 }
+
 
 editButton.addEventListener('click', function () { openModal(popupEdit); });
 addButton.addEventListener('click', function () { openModal(popupAdd); });

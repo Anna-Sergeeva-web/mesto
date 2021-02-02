@@ -3,7 +3,7 @@
     padding: 0;
     display: inline;
     width: 100%;
-    border:none;
+    border: none;
     min-height: 27px;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
@@ -14,12 +14,12 @@
 }
 
 .popup-input__text:first-of-type {
-   margin: calc(111px - 34px) 0 30px 0;
+   margin: calc(111px - 34px) 0 5px 0;
+}
+.popup-input__text:last-of-type {
+   margin: 0 0 5px 0;
 }
 
-.popup-input__text:last-of-type {
-    margin: 0 0 48px 0;
-}
 
 .popup-input__text::-webkit-input-placeholder { /* WebKit browsers */
     opacity: 1;
@@ -53,4 +53,4 @@
     line-height: auto;
  }
 
-
+ 

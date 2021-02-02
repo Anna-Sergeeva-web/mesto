@@ -16,6 +16,8 @@
 
 .button_type_save:hover {
     opacity: 0.8;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 @media screen and (max-width: 425px) {  
