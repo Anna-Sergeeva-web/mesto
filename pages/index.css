@@ -31,7 +31,6 @@
 @import "../blocks/popup-input/__text/_type/popup-input__text_type_edit.css";
 @import "../blocks/popup-input/__text/_type/popup-input__text_type_add.css";
 @import "../blocks/popup-input/__text/_type/popup-input__text_type_error.css";
-@import "../blocks/popup-input/_type/popup-input_type_opened.css";
 @import "../blocks/popup-input/_type/popup-input_type_photo.css";
 @import "../blocks/popup-input/__image/popup-input__image.css";
 @import "../blocks/popup-input/__caption/popup-input__caption.css";

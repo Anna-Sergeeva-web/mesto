@@ -48,31 +48,38 @@ const createButton = popupAdd.querySelector('.button_type_save');
 const placeInput = popupAdd.querySelector('.popup-input__text_type_place');
 const linkInput = popupAdd.querySelector('.popup-input__text_type_link');
 
-
 const render = () => {
   initialCards.forEach(renderItem);
 }
 
 const renderItem = (item) => {
-  const htmlElement = itemTemplate.cloneNode(true);
-  htmlElement.querySelector('.card__caption').innerText = item.name;
-  htmlElement.querySelector('.card__image').alt = item.name;
-  htmlElement.querySelector('.card__image').src = item.link;
-  htmlElement.querySelector('.button_type_heart').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('button_type_heart_active');
-  });
-  htmlElement.querySelector('.button_type_delete').addEventListener('click', function (evt) {
-    evt.target.closest('.card').remove();
-  });
-  htmlElement.querySelector('.card__image').addEventListener('click', function (evt) {
-    popupCaption.innerText = evt.target.alt;
-    popupImage.alt = evt.target.alt;
-    popupImage.src = evt.target.src;
-    openModal(popupPhoto);
-    overlayPhoto.add('overlay_type_image');
-  });
+  const htmlElement = createCard(item)
   photoGrid.prepend(htmlElement);
 }
+
+const createCard = (item) => {
+  const cardElement = itemTemplate.cloneNode(true);
+  const card = cardElement.querySelector('.card__image');
+  cardElement.querySelector('.card__caption').innerText = item.name;
+  card.alt = item.name;
+  card.src = item.link;
+  cardElement.querySelector('.button_type_heart').addEventListener('click', function (evt) {
+    evt.target.classList.toggle('button_type_heart_active');
+  });
+  cardElement.querySelector('.button_type_delete').addEventListener('click', function (evt) {
+    evt.target.closest('.card').remove();
+  });
+  card.addEventListener('click', function (evt) {
+    popupCaption.innerText = item.name;
+    popupImage.alt = item.name;
+    popupImage.src = item.link;
+    openModal(popupPhoto);
+    overlayPhoto.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    /*overlayPhoto.add('overlay_type_image');*/
+  });
+  return cardElement;
+}
+
 
 render();
 
@@ -80,20 +87,17 @@ function openModal(popup) {
   popup.closest('.overlay').classList.add('overlay_type_opened');
   popup.closest('.overlay').addEventListener('click', closeOverlay);
   document.addEventListener('keydown',closeEsc);
-  popup.classList.add('popup-input_type_opened');
-  linkInput.value = '';
-  placeInput.value = '';
 }
 
 const closeOverlay = (evt) => {
-  const popup = document.querySelector('.popup-input_type_opened');
+  const popup = document.querySelector('.overlay_type_opened');
   if (evt.target.classList.contains('overlay')) {
     closeModal(popup);
   }
 }
 
 const closeEsc = (evt) => {
-  const popup = document.querySelector('.popup-input_type_opened');
+  const popup = document.querySelector('.overlay_type_opened');
   if (evt.keyCode === 27) {
     closeModal(popup);
   }
@@ -101,21 +105,20 @@ const closeEsc = (evt) => {
 
 const closeModal = (popup) => {
   popup.closest('.overlay').classList.remove('overlay_type_opened');
-  popup.classList.remove('popup-input_type_opened');
   document.removeEventListener('keydown', closeEsc);
+  document.removeEventListener('keydown', closeOverlay);
 }
 
 const handleFormSubmit = (evt) => {
   evt.preventDefault();
-  
   profileName.textContent = nameInput.value;
   profileOccupation.textContent = jobInput.value;
+
   nameInput.value = '';
   jobInput.value = '';
 
   closeModal(popupEdit);
 }
-
 
 const handleFormSubmitAdd = (evt) => {
   evt.preventDefault();
@@ -125,14 +128,24 @@ const handleFormSubmitAdd = (evt) => {
     link: linkInput.value,};
     
     renderItem(newCard);
+    closeModal(popupAdd);
 }
 
+editButton.addEventListener('click', function () { 
+  openModal(popupEdit);
+  nameInput.value = profileName.innerText;
+  jobInput.value = profileOccupation.innerText;
+});
 
-editButton.addEventListener('click', function () { openModal(popupEdit); });
-addButton.addEventListener('click', function () { openModal(popupAdd); });
+addButton.addEventListener('click', function () { 
+  openModal(popupAdd);
+  linkInput.value = '';
+  placeInput.value = '';
+});
+
 closeButtonEdit.addEventListener('click', function () { closeModal(popupEdit); });
 closeButtonAdd.addEventListener('click', function () { closeModal(popupAdd); });
 closeButtonPhoto.addEventListener('click', function () { closeModal(popupPhoto); });
 popupEdit.addEventListener('submit', handleFormSubmit);
-createButton.addEventListener('click', handleFormSubmitAdd);
+popupAdd.addEventListener('submit', handleFormSubmitAdd);
 createButton.addEventListener('click', function () { closeModal(popupAdd); });

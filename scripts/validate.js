@@ -1,14 +1,14 @@
   const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add('popup-input__text_type_error');
+    inputElement.classList.add(selectors.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add('popup-input_error');
+    errorElement.classList.add(selectors.errorClass);
   };
   
   const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove('popup-input__text_type_error');
-    errorElement.classList.remove('popup-input_error');
+    inputElement.classList.remove(selectors.inputErrorClass);
+    errorElement.classList.remove(selectors.errorClass);
     errorElement.textContent = '';
   };
   
@@ -28,19 +28,18 @@
   
   const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
-      buttonElement.classList.add('button_type_inactive');
+      buttonElement.classList.add(selectors.inactiveButtonClass);
       buttonElement.disabled = true;
     } else {
-      buttonElement.classList.remove('button_type_inactive');
+      buttonElement.classList.remove(selectors.inactiveButtonClass);
       buttonElement.disabled = false;
     }
   };
   
-  
   const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll('.popup-input__text'));
-    const buttonElement = formElement.querySelector('button[type="submit"]');
-    const form = document.querySelector('#form');
+    const inputList = Array.from(formElement.querySelectorAll(selectors.inputSelector));
+    const buttonElement = formElement.querySelector(selectors.submitButtonSelector);
+    const form = document.querySelector(selectors.formSelector);
   
     toggleButtonState(inputList, buttonElement);
   
@@ -53,13 +52,20 @@
   }; 
   
 const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.popup-input'));
+    const formList = Array.from(document.querySelectorAll(selectors.formSelector)).filter(form => form.id !== "photo-popup");
     formList.forEach((formElement) => {
       formElement.addEventListener('submit', function (evt) {
         evt.preventDefault();
       });
-      setEventListeners(formElement);
+    setEventListeners(formElement);
     });
-  };
+};
 
-enableValidation();
+enableValidation(selectors = {
+  formSelector: '.popup-input',
+  inputSelector: '.popup-input__text',
+  submitButtonSelector: '.button_type_save',
+  inactiveButtonClass: '.button_type_inactive',
+  inputErrorClass: '.popup-input__text_type_error',
+  errorClass: '.popup-input_error'
+});

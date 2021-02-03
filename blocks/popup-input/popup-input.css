@@ -11,8 +11,6 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
     position: fixed;
     min-height: calc(330px - 34px - 37px);
-    visibility: hidden;
-    transition: visibility 0.5s;
 }
 
  @media screen and (max-width: 480px) {  
