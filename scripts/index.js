@@ -74,8 +74,6 @@ const createCard = (item) => {
     popupImage.alt = item.name;
     popupImage.src = item.link;
     openModal(popupPhoto);
-    overlayPhoto.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    /*overlayPhoto.add('overlay_type_image');*/
   });
   return cardElement;
 }
