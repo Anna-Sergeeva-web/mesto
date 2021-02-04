@@ -29,24 +29,24 @@ const photoGrid = document.querySelector('.photo-grid');
 const overlayEdit = document.querySelector('.overlay_type_edit');
 const overlayAdd = document.querySelector('.overlay_type_add');
 const overlayPhoto = document.querySelector('.overlay_type_photo');
-const popupEdit = overlayEdit.querySelector('.popup-input_type_edit');
-const popupAdd = overlayAdd.querySelector('.popup-input_type_add');
+const popupEditForm = overlayEdit.querySelector('.popup-input_type_edit');
+const popupAddForm = overlayAdd.querySelector('.popup-input_type_add');
 const popupPhoto = overlayPhoto.querySelector('.popup-input_type_photo');
 const profileElement = document.querySelector('.profile');
 const editButton = profileElement.querySelector('.button_type_edit');
 const addButton = profileElement.querySelector('.button_type_add');
-const closeButtonEdit = popupEdit.querySelector('.button_type_close');
-const closeButtonAdd = popupAdd.querySelector('.button_type_close');
+const closeButtonEdit = popupEditForm.querySelector('.button_type_close');
+const closeButtonAdd = popupAddForm.querySelector('.button_type_close');
 const closeButtonPhoto = popupPhoto.querySelector('.button_type_close');
 const popupImage = popupPhoto.querySelector('.popup-input__image');
 const popupCaption = popupPhoto.querySelector('.popup-input__caption');
 const profileName = profileElement.querySelector('.profile__name');
 const profileOccupation = profileElement.querySelector('.profile__occupation');
-const nameInput = popupEdit.querySelector('.popup-input__text_type_name');
-const jobInput = popupEdit.querySelector('.popup-input__text_type_occupation');
-const createButton = popupAdd.querySelector('.button_type_save');
-const placeInput = popupAdd.querySelector('.popup-input__text_type_place');
-const linkInput = popupAdd.querySelector('.popup-input__text_type_link');
+const nameInput = popupEditForm.querySelector('.popup-input__text_type_name');
+const jobInput = popupEditForm.querySelector('.popup-input__text_type_occupation');
+const createButton = popupAddForm.querySelector('.button_type_save');
+const placeInput = popupAddForm.querySelector('.popup-input__text_type_place');
+const linkInput = popupAddForm.querySelector('.popup-input__text_type_link');
 
 const render = () => {
   initialCards.forEach(renderItem);
@@ -73,7 +73,7 @@ const createCard = (item) => {
     popupCaption.innerText = item.name;
     popupImage.alt = item.name;
     popupImage.src = item.link;
-    openModal(popupPhoto);
+    openModal(overlayPhoto);
   });
   return cardElement;
 }
@@ -82,8 +82,8 @@ const createCard = (item) => {
 render();
 
 function openModal(popup) {
-  popup.closest('.overlay').classList.add('overlay_type_opened');
-  popup.closest('.overlay').addEventListener('click', closeOverlay);
+  popup.classList.add('overlay_type_opened');
+  popup.addEventListener('click', closeOverlay);
   document.addEventListener('keydown',closeEsc);
 }
 
@@ -102,9 +102,9 @@ const closeEsc = (evt) => {
 }
 
 const closeModal = (popup) => {
-  popup.closest('.overlay').classList.remove('overlay_type_opened');
+  popup.classList.remove('overlay_type_opened');
   document.removeEventListener('keydown', closeEsc);
-  document.removeEventListener('keydown', closeOverlay);
+  popup.removeEventListener('keydown', closeOverlay);
 }
 
 const handleFormSubmit = (evt) => {
@@ -115,7 +115,7 @@ const handleFormSubmit = (evt) => {
   nameInput.value = '';
   jobInput.value = '';
 
-  closeModal(popupEdit);
+  closeModal(overlayEdit);
 }
 
 const handleFormSubmitAdd = (evt) => {
@@ -126,24 +126,24 @@ const handleFormSubmitAdd = (evt) => {
     link: linkInput.value,};
     
     renderItem(newCard);
-    closeModal(popupAdd);
+    closeModal(overlayAdd);
 }
 
 editButton.addEventListener('click', function () { 
-  openModal(popupEdit);
+  openModal(overlayEdit);
   nameInput.value = profileName.innerText;
   jobInput.value = profileOccupation.innerText;
 });
 
 addButton.addEventListener('click', function () { 
-  openModal(popupAdd);
+  openModal(overlayAdd);
   linkInput.value = '';
   placeInput.value = '';
 });
 
-closeButtonEdit.addEventListener('click', function () { closeModal(popupEdit); });
-closeButtonAdd.addEventListener('click', function () { closeModal(popupAdd); });
-closeButtonPhoto.addEventListener('click', function () { closeModal(popupPhoto); });
-popupEdit.addEventListener('submit', handleFormSubmit);
-popupAdd.addEventListener('submit', handleFormSubmitAdd);
-createButton.addEventListener('click', function () { closeModal(popupAdd); });
+closeButtonEdit.addEventListener('click', function () { closeModal(overlayEdit); });
+closeButtonAdd.addEventListener('click', function () { closeModal(overlayAdd); });
+closeButtonPhoto.addEventListener('click', function () { closeModal(overlayPhoto); });
+popupEditForm.addEventListener('submit', handleFormSubmit);
+popupAddForm.addEventListener('submit', handleFormSubmitAdd);
+createButton.addEventListener('click', function () { closeModal(overlayAdd); });
